@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html ng-app="demoApp">
 <head>
+    <base href="/" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -22,8 +23,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+
+                    <li>@Html.ActionLink("About", "About", "Home", null, new { target = "_self"})</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { target = "_self" })</li>
+
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -33,7 +40,7 @@
         @RenderBody()
         <br />
         <br />
-        <div ng-view=""></div>
+       
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

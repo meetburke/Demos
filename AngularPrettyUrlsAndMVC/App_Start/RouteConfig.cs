@@ -18,6 +18,30 @@ namespace AngularPrettyUrlsAndMVC
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+
+            routes.MapRoute(
+                name: "HomeAboutOverride",
+                url: "Home/About",
+                defaults: new { controller = "Home", action = "About" }
+            );
+
+            routes.MapRoute(
+                name: "HomeContactOverride",
+                url: "Home/Contact",
+                defaults: new { controller = "Home", action = "Contact" }
+             );
+
+            routes.MapRoute(
+              name: "UsedForAngularRefreshPages",
+              url: "{*anything}",
+              defaults: new
+              {
+                  controller = "Home",
+                  action = "Index",
+              }
+          );
+
         }
     }
 }
