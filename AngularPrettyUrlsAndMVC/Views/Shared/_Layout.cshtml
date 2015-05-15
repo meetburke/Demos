@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="demoApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +31,9 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+        <br />
+        <br />
+        <div ng-view=""></div>
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
@@ -39,6 +42,14 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script type="text/javascript" src="~/app/app.js"></script>
+    <script type="text/javascript" src="~/app/home/homeIndexController.js"></script>
+    <script type="text/javascript" src="~/app/page2/page2Controller.js"></script>
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
